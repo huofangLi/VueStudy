@@ -1,0 +1,42 @@
+
+.left image,.middle image{
+	margin-top: 15rpx;
+	height: 60rpx;
+	width: 60rpx;
+}
+.text,.friends{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 80rpx;
+}
+.right{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin-left: 30rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	/* 前提是flex布局 垂直方向居中 */
+	/* justify-content: center; */
+	/* 水平方向居中 */
+}
+.hr{
+	width: 100%;
+	height: 1rpx;
+	background-color: #eee;
+	margin-left: 90rpx;
+}
+.zimu{
+	background-color: #ededed;
+	height: 60rpx;
+}
+.content{
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+}
+

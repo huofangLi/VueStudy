@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ucenter/ucenter",
+    "pages/ucenter/setting",
+    "pages/addressbook/addressList",
+    "pages/discover/discover",
+    "pages/my/my",
+    "pages/my/personal_information",
+    "pages/my/set",
+    "pages/my/expression",
+    "pages/my/card_bag",
+    "pages/my/photo_album",
+    "pages/my/collect",
+    "pages/my/pay"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#2F86FC",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/home-active.png",
+        "text": "微信"
+      },
+      {
+        "pagePath": "pages/addressbook/addressList",
+        "iconPath": "static/addperson.png",
+        "selectedIconPath": "static/addperson-active.png",
+        "text": "通讯录"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "iconPath": "static/find.png",
+        "selectedIconPath": "static/find_active.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/my.png",
+        "selectedIconPath": "static/my_active.png",
+        "text": "我"
+      }
+    ]
+  },
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "first-uni-appQQ"
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>vue.js computed 计算购物车总价</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<style type="text/css">
+			.container {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.item {
+				display: flex;
+				/* 富集容器 */
+				border: 1px solid aqua;
+				width: 400px;
+				height: 30px;
+				border-radius: 10px;
+				margin-bottom: 10px;
+				align-items: center;
+				/* 前提是flex布局 垂直方向居中 */
+				/* justify-content: center; */
+				/* 水平方向居中 */
+				padding-left: 10px;
+				/* 内边距 */
+				padding-right: 10px;
+				/* 外边距 */
+			}
+
+			.item-id {
+				flex: 1 1 10%;
+			}
+
+			.item-photo {
+				flex: 1 1 10%;
+			}
+
+			.item-name {
+				flex: 1 1 20%;
+			}
+
+			.item-price {
+				flex: 1 1 10%;
+			}
+
+			.item-count {
+				flex: 1 1 30%;
+			}
+
+			.item-details {
+				flex: 1 1 10%;
+			}
+
+			.goods-count {
+				width: 15px;
+			}
+
+			.button {
+				font-size: 20px;
+				width: 100px;
+				height: 50px;
+				color: aliceblue;
+				background-color: red;
+				border-radius: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="app">
+			<div class="container">
+				<div class="item" v-for="goods in goodsList">
+					<div class="item-id">
+						{{goods.id}}
+					</div>
+					<div class="item-photo">
+						<img :src="goods.photo">
+					</div>
+					<div class="item-name">
+						{{goods.name}}
+					</div>
+					<div class="item-price">
+						{{goods.price}}
+					</div>
+					<div class="item-count"><strong></strong>
+						<button type="button" @click="goods.count -= 1" :disabled="goods.count === 0">-</button>
+						<input type="text" v-model="goods.count" class="goods-count" />
+						<button type="button" @click="goods.count += 1">+</button>
+					</div>
+					<div class="item-details">
+						<a :href="goods.link">详情</a>
+					</div>
+				</div>
+				<hr>
+				<h3>Total price</h3>
+				<p>￥{{totalprice}}</p>
+				<button class="button" type="button" @click="jiesuan()">结算</button>
+				<img src="img/iphone8.png">
+
+			</div>
+		</span>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',
+			data: {
+				goodsList: [{
+					id: 1,
+					photo: 'img/iphone8.png',
+					name: 'iPhone8',
+					price: 6000,
+					count: 1,
+					link: 'https://item.jd.com/6784496.html'
+				}, {
+					id: 2,
+					ptoto: 'img/xiaomi9.png',
+					name: '小米9',
+					price: 3429,
+					count: 1,
+					link: 'https://item.jd.com/41563312675.html'
+				}, {
+					id: 3,
+					photo: 'img/huawei20.png',
+					name: '华为',
+					price: 5999,
+					count: 1,
+					link: 'https://item.jd.com/100000986050.html'
+				}]
+			},
+			computed: {
+				totalprice: function() {
+					// 定义一个变量
+					var totalprice = 0;
+					var len = this.goodsList.length;
+					for (var i = 0; i < len; i++) {
+						totalprice += this.goodsList[i].price * this.goodsList[i].count;
+					}
+					return totalprice;
+				}
+			},
+			methods: {
+				jiesuan: function() {
+					alert("恭喜您已成功结算！");
+				}
+			}
+		})
+	</script>
+</html>

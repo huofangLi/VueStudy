@@ -1,0 +1,59 @@
+
+.content{
+	height: 1400rpx;
+	background: #EEEEEE;
+}
+image{
+	height: 45rpx;
+	width: 45rpx;
+}
+.option{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	height: 100rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	background: #FFFFFF;
+	margin-top: 1rpx;
+	margin-bottom: 1rpx;
+}
+.option_f{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	    -ms-flex-pack:justify;
+	        justify-content:space-between;
+	height: 100rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	background: #FFFFFF;
+	margin-bottom: 20rpx;
+}
+.thridly{
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+}
+.end{
+	margin-top: 20rpx;
+}
+.name{
+	margin-left: 20rpx;
+}
+.arrows{
+	margin-right: 20rpx;
+}
+
+

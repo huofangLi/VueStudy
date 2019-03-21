@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"i]::-webkit-search-cancel-button {
+                display: none;
+            }
+
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"first-uni-appQQ","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"navigationBarTitleText":"主页"}},"pages/ucenter/ucenter.html":{"window":{"navigationBarTitleText":"我的"}},"pages/ucenter/setting.html":{"window":{"navigationBarTitleText":"个人设置"}},"pages/addressbook/addressList.html":{"window":{"navigationBarTitleText":"通讯录","navigationBarBackgroundColor":"#ededed"}},"pages/discover/discover.html":{"window":{"navigationBarTitleText":"发现"}},"pages/my/my.html":{"window":{"navigationBarTitleText":""}},"pages/my/personal_information.html":{"window":{"navigationBarTitleText":"个人信息"}},"pages/my/set.html":{"window":{"navigationBarTitleText":"设置"}},"pages/my/expression.html":{"window":{"navigationBarTitleText":"表情"}},"pages/my/card_bag.html":{"window":{"navigationBarTitleText":"卡包"}},"pages/my/photo_album.html":{"window":{"navigationBarTitleText":"相册"}},"pages/my/collect.html":{"window":{"navigationBarTitleText":"收藏"}},"pages/my/pay.html":{"window":{"navigationBarTitleText":"支付"}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"#000000","selectedColor":"#2F86FC","backgroundColor":"#FFFFFF","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/home.png","selectedIconPath":"static/home-active.png","text":"微信"},{"pagePath":"pages/addressbook/addressList.html","iconPath":"static/addperson.png","selectedIconPath":"static/addperson-active.png","text":"通讯录"},{"pagePath":"pages/discover/discover.html","iconPath":"static/find.png","selectedIconPath":"static/find_active.png","text":"发现"},{"pagePath":"pages/my/my.html","iconPath":"static/my.png","selectedIconPath":"static/my_active.png","text":"我"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/ucenter/ucenter","pages/ucenter/setting","pages/addressbook/addressList","pages/discover/discover","pages/my/my","pages/my/personal_information","pages/my/set","pages/my/expression","pages/my/card_bag","pages/my/photo_album","pages/my/collect","pages/my/pay"],"subPackages":[],"usingComponents":{},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false}}
+
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+            };
+
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

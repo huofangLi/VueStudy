@@ -1,0 +1,135 @@
+{
+	// 注册:所有vue页面必须注册才能使用
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "主页"
+			}
+		},
+		{
+			"path": "pages/ucenter/ucenter",
+			"style": {
+				"navigationBarTitleText": "我的"//导航标题文字
+			}
+		},
+		{
+			"path": "pages/ucenter/setting",
+			"style": {
+				"navigationBarTitleText": "个人设置"//导航标题文字
+			}
+		},
+		{
+			"path": "pages/addressbook/addressList",
+			"style": {
+				"navigationBarTitleText": "通讯录",//导航标题文字
+				"navigationBarBackgroundColor":"#ededed"
+			}
+		},
+		{
+			"path": "pages/discover/discover",
+			"style": {
+				"navigationBarTitleText": "发现"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": ""//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/personal_information",
+			"style": {
+				"navigationBarTitleText": "个人信息"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/set",
+			"style": {
+				"navigationBarTitleText": "设置"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/expression",
+			"style": {
+				"navigationBarTitleText": "表情"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/card_bag",
+			"style": {
+				"navigationBarTitleText": "卡包"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/photo_album",
+			"style": {
+				"navigationBarTitleText": "相册"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/collect",
+			"style": {
+				"navigationBarTitleText": "收藏"//navigationBarTitleText 导航标题文字
+			}
+		},
+		{
+			"path": "pages/my/pay",
+			"style": {
+				"navigationBarTitleText": "支付"//navigationBarTitleText 导航标题文字
+			}
+		}
+	],
+	// 配置tab页
+	"tabBar":{
+		"color":"#000000",
+		"selectedColor":"#2F86FC",
+		"backgroundColor":"#FFFFFF",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"static/home.png",
+				"selectedIconPath":"static/home-active.png",
+				"text":"微信"
+			},
+			{
+				"pagePath":"pages/addressbook/addressList",
+				"iconPath":"static/addperson.png",
+				"selectedIconPath":"static/addperson-active.png",
+				"text":"通讯录"
+			},
+			{
+				"pagePath":"pages/discover/discover",
+				"iconPath":"static/find.png",
+				"selectedIconPath":"static/find_active.png",
+				"text":"发现"
+			},
+			{
+				"pagePath":"pages/my/my",
+				"iconPath":"static/my.png",
+				"selectedIconPath":"static/my_active.png",
+				"text":"我"
+			}
+		]
+	},
+	//全局样式
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+		// "navigationStyle":"custom"//取消全局样式
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

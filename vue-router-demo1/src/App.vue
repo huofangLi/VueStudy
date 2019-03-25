@@ -1,5 +1,3 @@
-
-大班长 2019/3/21 11:02:56
 <template>
 	<div id="app">
 		<div class="header">

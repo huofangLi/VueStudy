@@ -12,7 +12,11 @@
 			v-model="course.courseClass"
 			class="input-box"
 		/>
-		<input type="text" placeholder="请输入图片地址" v-model="course.cover" class="input-box" />
+		<div class="preview" @click="handleClick()">
+			<img :src="course.imageUrl" class="cover" v-if="!show"/>
+			<img src="../assets/add.png" class="icon-plus" v-if="show" ></image>
+			<input type="file" @change="getFile($event)" style="display: none;" id="coverFile" />
+		</div>
 		<button @click="addCourse(course)" class="btn">确定</button>
 	</div>
 </template>
@@ -22,11 +26,13 @@ export default {
 	name: 'NewCourse',
 	data() {
 		return {
+			show:true,
+			file:'',
 			loginUserId: 1,
 			course: {
 				courseName: '',
 				courseClass: '',
-				cover: ''
+				imageUrl:''
 			}
 		};
 	},
@@ -40,13 +46,25 @@ export default {
 					userId: _this.loginUserId,
 					courseName: course.courseName,
 					courseClass: course.courseClass,
-					cover: course.cover,
+					cover: course.imageUrl,
 					finished: 0
 				}
 			}).then(function() {
 				alert('新增班课成功');
 				_this.$router.push('/');
 			});
+		},
+		//点击图片预览区，即模拟点击文件选择组件
+		handleClick: function() {
+			document.getElementById('coverFile').click();
+		},
+		//图片预览
+		getFile: function() {
+			this.file = event.target.files[0];
+			var windowURL = window.URL || window.webkitURL;
+			this.course.imageUrl = windowURL.createObjectURL(this.file);
+			// alert(windowURL.createObjectURL(this.file));
+			this.show = false;
 		}
 	}
 };
@@ -75,5 +93,29 @@ export default {
 	outline: none;
 	color: rgb(0, 187, 221);
 	font-size: 16px;
+}
+
+.preview {
+	width: 150px;
+	height: 150px;
+	border: 2px dashed #aaa;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon-plus {
+	width: 70px;
+	height: 70px;
+}
+
+.cover {
+	width: 100%;
+	height: 100%;
+}
+
+button{
+	margin-top: 20px;
 }
 </style>
